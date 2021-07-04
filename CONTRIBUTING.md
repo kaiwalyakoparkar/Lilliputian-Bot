@@ -18,6 +18,6 @@ Then, please [create a new issue in the GitHub repository][new-issue] describing
 
 Be sure to include as much detail as possible including step-by-step descriptions, specific examples, screenshots or mockups, and reasoning for why the enhancement might be worthwhile.
 
-[new-issue]: https://github.com/kaiwalyakoparkar/FAQ-Accordion-Card/issues/new
-[github-repo]: https://github.com/kaiwalyakoparkar/FAQ-Accordion-Card/
-[issues-list]: https://github.com/kaiwalyakoparkar/FAQ-Accordion-Card/issues
+[new-issue]: https://github.com/kaiwalyakoparkar/Lilliputian-Bot/issues/new
+[github-repo]: https://github.com/kaiwalyakoparkar/Lilliputian-Bot/
+[issues-list]: https://github.com/kaiwalyakoparkar/Lilliputian-Bot/issues
