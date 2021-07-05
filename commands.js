@@ -69,5 +69,9 @@ module.exports = async function (msg) {
 		);
 	} else if (tokens[0] === 'put!help') {
 		msg.channel.send(helpEmbed);
+	} else if (tokens[0] === 'put!react') {
+		msg.react('😃');
+		msg.react('❤️');
+		msg.react('🎉');
 	}
 };
