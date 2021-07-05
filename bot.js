@@ -6,15 +6,27 @@ const Discord = require('discord.js');
 const client = new Discord.Client();
 
 //Imports which are necessary for dev
-require('dotenv').config();//required to enable use of .env file
-const fetch = require('node-fetch');//require to fetch url for use in API
+require('dotenv').config(); //required to enable use of .env file
+// const fetch = require('node-fetch'); //require to fetch url for use in API
 
 //Loging in as client.
 client.login(process.env.BOTTOKEN);
 
 //When client gets logged in successfully this callback runs
 client.on('ready', () => {
-    console.log('Login Sucessfull');
+	console.log(
+		`LoggedIn Sucessfully, Running bot version v${
+			require('./package.json').version
+		}`
+	);
+	client.user.setPresence({
+		status: 'online',
+		activity: {
+			name: 'for any help to your server members',
+			type: 'WATCHING',
+			url: 'https://github.com/kaiwalyakoparkar/Lilliputian-Bot',
+		},
+	});
 });
 
 //Points to external commands list.
