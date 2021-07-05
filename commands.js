@@ -26,7 +26,7 @@ const helpEmbed = new Discord.MessageEmbed()
 	.setThumbnail('https://imgur.com/uBv5Pq9.jpg')
 	.addField(
 		'Up Commands',
-		'put!help = Helps with bot commands \n put!hey = Replies Hey \n put!gif = Sends Hello gif by default \n put!gif <argument> = Sends gif for specified keyword/argument'
+		'put!help = Helps with bot commands \n put!hey = Replies Hey \n put!gif = Sends Hello gif by default \n put!gif <argument> = Sends gif for specified keyword/argument \n put!react = Reacts to the message with emoji'
 	)
 	.setTimestamp()
 	.setFooter(
