@@ -73,5 +73,9 @@ module.exports = async function (msg) {
 		msg.react('😃');
 		msg.react('❤️');
 		msg.react('🎉');
+	} else if (tokens[0] === 'put!congratulate') {
+		msg.channel.send('Congratulations ' + tokens[1]);
+		msg.react('🎉');
+		msg.react('🥳');
 	}
 };
