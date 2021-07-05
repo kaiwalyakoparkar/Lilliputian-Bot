@@ -24,11 +24,6 @@ const helpEmbed = new Discord.MessageEmbed()
 	)
 	.setDescription('Minimalist yet powerful bot you need in every server.')
 	.setThumbnail('https://imgur.com/uBv5Pq9.jpg')
-	// .addFields(
-	// 	{ name: 'Up Commands', value: 'put!help' },
-	// 	{ name: '\u200B', value: '\u200B' }
-	// )
-	// .addField('Inline field title', 'Some value here', true)
 	.addField(
 		'Up Commands',
 		'put!help = Helps with bot commands \n put!hey = Replies Hey \n put!gif = Sends Hello gif by default \n put!gif <argument> = Sends gif for specified keyword/argument'
