@@ -1,3 +1,7 @@
+//Primary Imports
+const Discord = require('discord.js');
+// const client = new Discord.Client();
+
 //Fetches the module to be able to fetch API info
 const fetch = require('node-fetch');
 
@@ -8,6 +12,32 @@ const replies = [
 	'Let me rest a bit',
 	'How may I help you?',
 ];
+
+const helpEmbed = new Discord.MessageEmbed()
+	.setColor('#01dba7')
+	.setTitle('Lilliputian ready for help!')
+	.setURL('https://discord.js.org/')
+	.setAuthor(
+		'Lilliputian to help',
+		'https://imgur.com/uBv5Pq9.jpg',
+		'https://discord.js.org'
+	)
+	.setDescription('Minimalist yet powerful bot you need in every server.')
+	.setThumbnail('https://imgur.com/uBv5Pq9.jpg')
+	// .addFields(
+	// 	{ name: 'Up Commands', value: 'put!help' },
+	// 	{ name: '\u200B', value: '\u200B' }
+	// )
+	// .addField('Inline field title', 'Some value here', true)
+	.addField(
+		'Up Commands',
+		'put!help = Helps with bot commands \n put!hey = Replies Hey \n put!gif = Sends Hello gif by default \n put!gif <argument> = Sends gif for specified keyword/argument'
+	)
+	.setTimestamp()
+	.setFooter(
+		'Want help? Lilliput is just `put!help` far',
+		'https://imgur.com/uBv5Pq9.jpg'
+	);
 
 module.exports = async function (msg) {
 	//This splits the sentence by spaces
@@ -42,5 +72,7 @@ module.exports = async function (msg) {
 		msg.reply(
 			`Lilliput is currently running v${require('./package.json').version}`
 		);
+	} else if (tokens[0] === 'put!help') {
+		msg.channel.send(helpEmbed);
 	}
 };
