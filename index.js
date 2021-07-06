@@ -22,6 +22,14 @@ client.on('ready', () => {
         })
     });
 
+    command(client, ['cc', 'purge','clearchannel'], message => {
+        if(message.member.hasPermission('ADMINISTRATOR')){
+            message.channel.messages.fetch().then(results => {
+                message.channel.bulkDelete(results);
+            })
+        }
+    });
+
     
 });
 
