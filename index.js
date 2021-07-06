@@ -10,7 +10,8 @@ const servers = require('./Commands/servers.js');
 const purge = require('./Commands/purge.js');
 const version = require('./Commands/version.js');
 const presence = require('./Commands/presence.js');
-const privateDM = require('./Commands/private-message.js');
+const privateDM = require('./Commands/privateMessage.js');
+const serverStats = require('./Commands/serverStats.js');
 
 console.log('Welcome to Lilliputian - A disord bot');
 
@@ -41,11 +42,15 @@ client.on('ready', () => {
     
     command(client, 'gif', message =>{
         gif(message);
-    })
+    });
 
     command(client, 'invite', message => {
         privateDM(message);
-    })
+    });
+
+    command(client, ['stats','sStats','serverStats'], message => {
+        serverStats(message, Discord);
+    });
 });
 
 client.login(config.BOTTOKEN);
