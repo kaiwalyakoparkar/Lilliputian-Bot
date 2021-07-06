@@ -1,11 +1,12 @@
 {
   "name": "lilliputian-bot",
-  "version": "1.2.0",
+  "version": "1.7.0",
   "description": "Minimalist bot you need in every server",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "start": "node bot.js"
   },
   "keywords": [
     "nodejs",
