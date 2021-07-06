@@ -1,6 +1,7 @@
 const Discord = require('discord.js');
 const fetch = require('node-fetch');
 const config = require('../config.json');
+const env = require('dotenv');
 
 module.exports = async function (msg) {
 	 tokens = msg.content.split(' ');
@@ -15,8 +16,8 @@ module.exports = async function (msg) {
 	}
 
 	//Fetches the gif through api endpoint
-	// const url = `https://g.tenor.com/v1/search?q=${keywords}&key=${process.env.TENORKEY}&contentfilter=high`;
-        const url = `https://g.tenor.com/v1/search?q=${keywords}&key=${config.TENORKEY}&contentfilter=high`;
+	const url = `https://g.tenor.com/v1/search?q=${keywords}&key=${process.env.TENORKEY}&contentfilter=high`;
+    // const url = `https://g.tenor.com/v1/search?q=${keywords}&key=${config.TENORKEY}&contentfilter=high`;
 	const response = await fetch(url); //Fetches the url
 	const json = await response.json(); //Converts to json and sends forward
 
