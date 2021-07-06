@@ -1,6 +1,5 @@
-//Replace with key's after '=' and remove this comment
-
 {
-	"BOTTOKEN": "",
-	"TENOR": ""
+	"BOTTOKEN": "XXXXXXX",
+	"TENOR": "XXXXXXX",
+	"prefix": "put!"
 }

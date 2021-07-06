@@ -1,4 +1,4 @@
-const {prefix} = require('../config.json');
+const {prefix} = require('../sample-config.json');
 
 module.exports = (client, aliases, callback) => {
 
