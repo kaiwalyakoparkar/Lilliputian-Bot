@@ -2,7 +2,7 @@ const Discord = require('discord.js');
 const helpEmbed = new Discord.MessageEmbed()
 	.setColor('#01dba7')
 	.setTitle('Lilliputian ready for help!')
-	.setURL('https://discord.js.org/')
+	.setURL('https://github.com/kaiwalyakoparkar/Lilliputian-Bot')
 	.setAuthor(
 		'Lilliputian to help',
 		'https://imgur.com/uBv5Pq9.jpg',
