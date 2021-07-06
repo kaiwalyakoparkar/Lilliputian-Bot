@@ -12,6 +12,16 @@ client.on('ready', () => {
 	);
 
 
+    command(client, ['hey','hello'], message => {
+        message.channel.send('Heya how may I help you?');
+    });
+
+    command(client, 'servers', message => {
+        client.guilds.cache.forEach((guild) => {
+            message.channel.send(`${guild.name} has a total of ${guild.memberCount} members`)
+        })
+    });
+
     
 });
 
