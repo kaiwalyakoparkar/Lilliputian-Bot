@@ -2,4 +2,4 @@
 /prod/
 .env
 /Deprication/
-sample-config.json
+config.json

@@ -2,46 +2,45 @@ const Discord = require('discord.js');
 const client = new Discord.Client();
 
 const config = require('./config.json');
-const command = require('./command.js');
+const command = require('./Commands/command.js');
+const hey = require('./Commands/hey.js');
+const help = require('./Commands/help.js');
+const gif = require('./Commands/gif.js');
+const servers = require('./Commands/servers.js');
+const purge = require('./Commands/purge.js');
+const version = require('./Commands/version.js');
+const presence = require('./Commands/presence.js');
 
 console.log('Welcome to Lilliputian - A disord bot');
 
 client.on('ready', () => {
-	console.log(
-		`Bot is running on version v${require('./package.json').version}`
-	);
-
+	console.log(`Lilliput is currently running on version v${require('./package.json').version}`);
+    
+    presence(client);
 
     command(client, ['hey','hello'], message => {
-        message.channel.send('Heya how may I help you?');
+        hey(message);
     });
 
     command(client, 'servers', message => {
-        client.guilds.cache.forEach((guild) => {
-            message.channel.send(`${guild.name} has a total of ${guild.memberCount} members`)
-        })
+        servers(client, message);
     });
 
     command(client, ['cc', 'purge','clearchannel'], message => {
-        if(message.member.hasPermission('ADMINISTRATOR')){
-            message.channel.messages.fetch().then(results => {
-                message.channel.bulkDelete(results);
-            })
-        }
+        purge(message);
     });
 
-    command(client, 'status', message => {
-        const content = message.content.replace('put!status', '');
-
-        if(message.member.hasPermission('ADMINISTRATOR')){
-            client.user.setPresence({
-                activity: {
-                    name: content,
-                    type: 1
-                }
-            });
-        }
+    command(client, 'version', message => {
+        version(message);
     });
+
+    command(client, 'help', message => {
+        message.channel.send(help);
+    });
+    
+    command(client, 'gif', message =>{
+        gif(message);
+    })
 });
 
 client.login(config.BOTTOKEN);
