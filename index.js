@@ -30,7 +30,18 @@ client.on('ready', () => {
         }
     });
 
-    
+    command(client, 'status', message => {
+        const content = message.content.replace('put!status', '');
+
+        if(message.member.hasPermission('ADMINISTRATOR')){
+            client.user.setPresence({
+                activity: {
+                    name: content,
+                    type: 1
+                }
+            });
+        }
+    });
 });
 
 client.login(config.BOTTOKEN);
