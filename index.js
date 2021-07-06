@@ -10,12 +10,13 @@ const servers = require('./Commands/servers.js');
 const purge = require('./Commands/purge.js');
 const version = require('./Commands/version.js');
 const presence = require('./Commands/presence.js');
+const privateDM = require('./Commands/private-message.js');
 
 console.log('Welcome to Lilliputian - A disord bot');
 
 client.on('ready', () => {
 	console.log(`Lilliput is currently running on version v${require('./package.json').version}`);
-    
+
     presence(client);
 
     command(client, ['hey','hello'], message => {
@@ -40,6 +41,10 @@ client.on('ready', () => {
     
     command(client, 'gif', message =>{
         gif(message);
+    })
+
+    command(client, 'invite', message => {
+        privateDM(message);
     })
 });
 
