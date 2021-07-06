@@ -1,5 +1,6 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
+const env = require('dotenv').config();
 
 const config = require('./config.json');
 const command = require('./Commands/command.js');
@@ -53,4 +54,4 @@ client.on('ready', () => {
     });
 });
 
-client.login(config.BOTTOKEN);
+client.login(process.env.BOTTOKEN);
