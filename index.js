@@ -14,8 +14,9 @@ const presence = require('./Commands/presence.js');
 const privateDM = require('./Commands/privateMessage.js');
 const serverStats = require('./Commands/serverStats.js');
 const firstMessage = require('./Commands/firstMessage.js');
-const roleClaim = require('./Commands/roleClaim');
-const poll = require('./Commands/poll');
+const roleClaim = require('./Commands/roleClaim.js');
+const poll = require('./Commands/poll.js');
+const welcome = require('./Commands/welcome.js');
 
 console.log('Welcome to Lilliputian - A disord bot');
 
@@ -56,11 +57,11 @@ client.on('ready', () => {
         serverStats(message, Discord);
     });
 
-    
-    // firstMessage(client, '862015519523602442', 'Welcome to the server, Here you can get roles as you wish', ['😃', '🔥']);
-    // roleClaim(client);
+    roleClaim(client);
 
     poll(client);
+
+    welcome(client);
 });
 
 client.login(process.env.BOTTOKEN);

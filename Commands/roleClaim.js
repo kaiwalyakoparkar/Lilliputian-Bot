@@ -1,13 +1,12 @@
-const firstMessage = require('./firstMessage.js');
+const firstMessage = require('./firstMessage')
 
 module.exports = (client) => {
-	const channelID = '862022525583360030';
+  const channelId = '862022525583360030'
 
-	let getEmoji = ((emojiName) => {
-		client.emojis.cache.find((emoji) => emoji.name === emojiName)
-	});
+  const getEmoji = (emojiName) =>
+    client.emojis.cache.find((emoji) => emoji.name === emojiName)
 
-	const emojis = {
+  const emojis = {
 		Become : 'Community-Member',
 		Allow : 'Community-Ping',
 	}
@@ -18,42 +17,41 @@ module.exports = (client) => {
 	emojiText += `Become ${emojis.Become}\n`
 	emojiText += `Allow ${emojis.Allow}\n`
 
-	firstMessage(client, channelID, emojiText, reactions);
+  firstMessage(client, channelId, emojiText, reactions)
 
-	const handleReaction = ((reaction, user, add) => {
-		if(user.id === '861212506251984906'){
-			return;
-		}
+  const handleReaction = (reaction, user, add) => {
+    if (user.id === '862022525583360030') {
+      return
+    }
 
-		console.log(reaction);
-		const emoji = reaction_emoji.name;
+    const emoji = reaction._emoji.name
 
-		const {guild} = reaction.message;
+    const { guild } = reaction.message
 
-		const relation = emojis[emoji];
-		if(!relation){
-			return;
-		}
+    const roleName = emojis[emoji]
+    if (!roleName) {
+      return
+    }
 
-		const role = guild.roles.cache.find(role => role.name ===relation);
-		const member = guild.members.cache.find((member) => member.id == user.id);
+    const role = guild.roles.cache.find((role) => role.name === roleName)
+    const member = guild.members.cache.find((member) => member.id === user.id)
 
-		if (add) {
-      		member.roles.add(role)
-    	} else {
-      		member.roles.remove(role)
-    	}
-	});
+    if (add) {
+      member.roles.add(role)
+    } else {
+      member.roles.remove(role)
+    }
+  }
 
-	client.on('messageReactionAdd', (reaction, user) => {
-		if(reaction.message.channel.id === channelID){
-			handleReaction(reaction, user, true);
-		}
-	});
+  client.on('messageReactionAdd', (reaction, user) => {
+    if (reaction.message.channel.id === channelId) {
+      handleReaction(reaction, user, true)
+    }
+  })
 
-	client.on('messageReactionRemove', (reaction, user) => {
-		if(reaction.message.channel.id === channelID){
-			handleReaction(reaction, user, true);
-		}
-	});
+  client.on('messageReactionRemove', (reaction, user) => {
+    if (reaction.message.channel.id === channelId) {
+      handleReaction(reaction, user, false)
+    }
+  })
 }
