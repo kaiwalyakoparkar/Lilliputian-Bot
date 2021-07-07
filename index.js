@@ -13,6 +13,10 @@ const version = require('./Commands/version.js');
 const presence = require('./Commands/presence.js');
 const privateDM = require('./Commands/privateMessage.js');
 const serverStats = require('./Commands/serverStats.js');
+const firstMessage = require('./Commands/firstMessage.js');
+const roleClaim = require('./Commands/roleClaim.js');
+const poll = require('./Commands/poll.js');
+const welcome = require('./Commands/welcome.js');
 
 console.log('Welcome to Lilliputian - A disord bot');
 
@@ -52,6 +56,12 @@ client.on('ready', () => {
     command(client, ['stats','sStats','serverStats'], message => {
         serverStats(message, Discord);
     });
+
+    roleClaim(client);
+
+    poll(client);
+
+    welcome(client);
 });
 
 client.login(process.env.BOTTOKEN);
