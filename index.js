@@ -111,7 +111,7 @@ client.on('ready', () => {
 
 	// roleClaim(client);
 
-	// poll(client);
+	poll(client);
 
 	// welcome(client);
 });
