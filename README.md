@@ -50,6 +50,8 @@ Hosting:
 
 #### `put!stats / put!sStats/ put!serverStats` - Sends in the server status.
 
+#### `put!poll` - Send a message first and then send this command to make the first message a poll
+
 ## Want to contribute?
 
 We welcome everyone who wan't to contribute to this project. Kindly look up to [CODE_OF_CONDUCT](CODE_OF_CONDUCT) and [CONTRIBUTING](CONTRIBUTING) guidlines before contributing. You are free to comeup with any contribution as you want just follow the following steps
