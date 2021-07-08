@@ -16,10 +16,10 @@ const helpEmbed = new Discord.MessageEmbed()
 			name: 'General Purpose Commands',
 			value: '`help`,  `invite`, `servers`, `version`, `poll`',
 		},
-		{ name: 'Fun Commands', value: '`gif`, `gif<keyword>`,`hey`, `hello`' },
+		{ name: 'Fun Commands', value: '`gif`, `gif <keyword>`,`hey`, `hello`' },
 		{
 			name: 'Moderation Commands (Only for Admins)',
-			value: '`cc`,`clearchannel`,`purge`',
+			value: '`cc`,`clearchannel`,`purge`, `ban @user`, `kick @user`',
 		}
 	)
 	.setTimestamp()
