@@ -2,7 +2,6 @@ const Discord = require('discord.js');
 const client = new Discord.Client();
 const env = require('dotenv').config();
 
-const config = require('./config.json');
 const command = require('./Commands/command.js');
 const hey = require('./Commands/hey.js');
 const help = require('./Commands/help.js');
@@ -13,7 +12,6 @@ const version = require('./Commands/version.js');
 const presence = require('./Commands/presence.js');
 const privateDM = require('./Commands/privateMessage.js');
 const serverStats = require('./Commands/serverStats.js');
-const firstMessage = require('./Commands/firstMessage.js');
 const roleClaim = require('./Commands/roleClaim.js');
 const poll = require('./Commands/poll.js');
 const welcome = require('./Commands/welcome.js');
@@ -21,47 +19,51 @@ const welcome = require('./Commands/welcome.js');
 console.log('Welcome to Lilliputian - A disord bot');
 
 client.on('ready', () => {
-	console.log(`Lilliput is currently running on version v${require('./package.json').version}`);
+	console.log(
+		`Lilliput is currently running on version v${
+			require('./package.json').version
+		}`
+	);
 
-    presence(client);
+	presence(client);
 
-    command(client, ['hey','hello'], message => {
-        hey(message);
-    });
+	command(client, ['hey', 'hello'], (message) => {
+		hey(message);
+	});
 
-    command(client, 'servers', message => {
-        servers(client, message);
-    });
+	command(client, 'servers', (message) => {
+		servers(client, message);
+	});
 
-    command(client, ['cc', 'purge','clearchannel'], message => {
-        purge(message);
-    });
+	command(client, ['cc', 'purge', 'clearchannel'], (message) => {
+		purge(message);
+	});
 
-    command(client, 'version', message => {
-        version(message);
-    });
+	command(client, 'version', (message) => {
+		version(message);
+	});
 
-    command(client, 'help', message => {
-        message.channel.send(help);
-    });
-    
-    command(client, 'gif', message =>{
-        gif(message);
-    });
+	command(client, 'help', (message) => {
+		message.channel.send(help);
+	});
 
-    command(client, 'invite', message => {
-        privateDM(message);
-    });
+	command(client, 'gif', (message) => {
+		gif(message);
+	});
 
-    command(client, ['stats','sStats','serverStats'], message => {
-        serverStats(message, Discord);
-    });
+	command(client, 'invite', (message) => {
+		privateDM(message);
+	});
 
-    roleClaim(client);
+	command(client, ['stats', 'sStats', 'serverStats'], (message) => {
+		serverStats(message, Discord);
+	});
 
-    poll(client);
+	roleClaim(client);
 
-    welcome(client);
+	poll(client);
+
+	welcome(client);
 });
 
 client.login(process.env.BOTTOKEN);

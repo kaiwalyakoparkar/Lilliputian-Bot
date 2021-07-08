@@ -34,45 +34,21 @@ Hosting:
 
 #### `put!help` - Helps with the commands and features the bot offer
 
-<img src="https://i.imgur.com/xCOQSjz.png"  height=250px width=450px>
-
 #### `put!hey / put!hello` - Say's hey to the user
-
-<img src="https://i.imgur.com/qg6XtSN.png"  height=100px>
 
 #### `put!servers` - Show's the popularity of the server by showing in the servers the bot is present in
 
-<img src="https://i.imgur.com/qCGt3cj.png"  height=100px>
-
 #### `put!cc / put!clearchannel/ put!purge` - Deletes the rescent converstion of that channel in bulk.
-
-#### _Before:_
-
-<img src="https://i.imgur.com/sh8IJCm.png"  height=400px width=500px>
-
-#### _After:_
-
-<img src="https://i.imgur.com/f34sCV3.png"  height=200px>
 
 #### `put!version` - Display's the current running version of the bot.
 
-<img src="https://i.imgur.com/UH9TukH.png"  height=80px>
-
 #### `put!gif` - Sends in random hello gif
-
-<img src="https://i.imgur.com/iWihbmy.png"  height=200px>
 
 #### `put!gif <argument>` - Sends in gif related to the argument eg put!gif cute cat will send in a random cat gif
 
-<img src="https://i.imgur.com/5AMB59H.png"  height=300px>
-
 #### `put!invite` - Sends in the invite of the bot into the DM's
 
-<img src="https://i.imgur.com/LgJ7gx7.png"  height=150px width=500px>
-
 #### `put!stats / put!sStats/ put!serverStats` - Sends in the server status.
-
-<img src="https://i.imgur.com/tv5260Z.pngg"  height=300px>
 
 ## Want to contribute?
 
