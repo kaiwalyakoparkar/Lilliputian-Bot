@@ -52,6 +52,10 @@ Hosting:
 
 #### `put!poll` - Send a message first and then send this command to make the first message a poll
 
+#### `put!kick @user` - Kick's the specified user if you have a kick permission in that server.
+
+#### `put!ban @user` - Ban's the specified user if you have a ban permission in that server.
+
 ## Want to contribute?
 
 We welcome everyone who wan't to contribute to this project. Kindly look up to [CODE_OF_CONDUCT](CODE_OF_CONDUCT) and [CONTRIBUTING](CONTRIBUTING) guidlines before contributing. You are free to comeup with any contribution as you want just follow the following steps
