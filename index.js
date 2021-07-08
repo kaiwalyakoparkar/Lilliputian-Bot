@@ -59,11 +59,36 @@ client.on('ready', () => {
 		serverStats(message, Discord);
 	});
 
-	roleClaim(client);
+	command(client, 'ban', (message) => {
+		const { member, mentions } = message;
 
-	poll(client);
+		const tag = `<@${member.id}>`;
 
-	welcome(client);
+		if (
+			member.hasPermission('ADMINISTRATOR') ||
+			member.hasPermission('BAN_MEMBERS')
+		) {
+			const target = mentions.users.first();
+			if (target) {
+				const targetMember = message.guild.members.cache.get(target.id);
+				targetMember.ban();
+				message.channel.send(`${tag} the specified user is banned`);
+			} else {
+				message.channel.send(`${tag} Please specify someone to ban.`);
+			}
+			// console.log(target);
+		} else {
+			message.channel.send(
+				`${tag} You do not have permissions to ban a member. Kindly contact Moderator or Admin to report any concern`
+			);
+		}
+	});
+
+	// roleClaim(client);
+
+	// poll(client);
+
+	// welcome(client);
 });
 
 client.login(process.env.BOTTOKEN);
