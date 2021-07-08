@@ -1,6 +1,6 @@
 {
   "name": "lilliputian-bot",
-  "version": "1.9.0",
+  "version": "1.10.0",
   "description": "Minimalist bot you need in every server",
   "main": "index.js",
   "scripts": {
