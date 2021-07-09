@@ -14,19 +14,19 @@
 ## About :
 
 This bot was born out of curiousity to learn about discord js and provide with a minimalist yet powerful bot for discord servers. This is the bot you need in every server. It handles everything from
-and many more to come. More future updates are planned for this project so don't miss on awesome features. Invite it your server [here >>](https://discord.com/api/oauth2/authorize?client_id=861212506251984906&permissions=8&scope=bot)
+and many more to come. More future updates are planned for this project so don't miss on awesome features. Invite it your server [here >>](https://discord.com/api/oauth2/authorize?client_id=861212506251984906&permissions=8&scope=bot).
 
 - Moderation
 - Game
 - Memes
 - Performing user requests
 
-Built using:
+### **Built using:**
 
 - Discord Js
 - Tenor Api (for custom gif's)
 
-Hosting:
+### **Hosting:**
 
 - Heroku (Free tier)
 
@@ -75,4 +75,4 @@ Join our [Discord Server](https://discord.com/invite/jvdcY2NkXa) to communicate 
 
 ## Help Us Help You!!
 
-If you are still here. Kindly consider giving this project a '⭐' and you can go one step ahead by [Becomming a Sponsor](https://buymecoffee.com/kaiwalya).
+If you are still here. Kindly consider giving this project a " ⭐ " and you can go one step ahead by [Becomming a Sponsor](https://buymecoffee.com/kaiwalya).
