@@ -76,7 +76,6 @@ client.on('ready', () => {
 			} else {
 				message.channel.send(`${tag} Please specify someone to ban.`);
 			}
-			// console.log(target);
 		} else {
 			message.channel.send(
 				`${tag} You do not have permissions to ban a member. Kindly contact Moderator or Admin to report any concern`
@@ -101,7 +100,6 @@ client.on('ready', () => {
 			} else {
 				message.channel.send(`${tag} Please specify someone to kick.`);
 			}
-			// console.log(target);
 		} else {
 			message.channel.send(
 				`${tag} You do not have permissions to ban a member. Kindly contact Moderator or Admin to report any concern`
@@ -115,5 +113,4 @@ client.on('ready', () => {
 
 	// welcome(client);
 });
-
 client.login(process.env.BOTTOKEN);
