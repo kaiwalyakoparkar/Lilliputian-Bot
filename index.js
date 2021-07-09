@@ -116,4 +116,12 @@ client.on('ready', () => {
 	// welcome(client);
 });
 
+/**
+client.on('guildMemberAdd', (member) => {
+  const message = `Please welcome <@${member.id}> to the server! Please check out <#Welcome Channel ID>`
+  const channel = member.guild.channels.cache.get('Add The Channel ID In Which You Want To Send Msg');
+  channel.send(message);
+});
+*/
+
 client.login(process.env.BOTTOKEN);
