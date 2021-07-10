@@ -32,6 +32,9 @@ and many more to come. More future updates are planned for this project so don't
 
 ## Commands Supported :
 
+![Lilliput-gif](https://user-images.githubusercontent.com/53310847/125151623-1a0df180-e165-11eb-80e3-bae6063e8dbb.gif)
+
+
 #### `put!help` - Helps with the commands and features the bot offer
 
 #### `put!hey / put!hello` - Say's hey to the user
