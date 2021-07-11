@@ -16,6 +16,7 @@ const serverStats = require('./Commands/serverStats.js');
 const roleClaim = require('./Commands/roleClaim.js');
 const poll = require('./Commands/poll.js');
 const welcome = require('./Commands/welcome.js');
+const antiAd = require('./Commands/anti-ad');
 
 const EventEmitter = require('events');
 EventEmitter.setMaxListeners(20);
@@ -40,6 +41,8 @@ client.on('ready', async () => {
 	welcome(client);
 
 	presence(client);
+
+	antiAd(client);
 
 	command(client, ['hey', 'hello'], (message) => {
 		hey(message);
@@ -124,6 +127,5 @@ client.on('ready', async () => {
 	// roleClaim(client);
 
 	poll(client);
-	
 });
 client.login(process.env.BOTTOKEN);
