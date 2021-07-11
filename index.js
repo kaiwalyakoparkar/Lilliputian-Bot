@@ -1,6 +1,7 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
 const env = require('dotenv').config();
+const mongo = require('./utils/mongo.js');
 
 const command = require('./Commands/command.js');
 const hey = require('./Commands/hey.js');
@@ -16,14 +17,25 @@ const roleClaim = require('./Commands/roleClaim.js');
 const poll = require('./Commands/poll.js');
 const welcome = require('./Commands/welcome.js');
 
+const EventEmitter = require('events');
+EventEmitter.setMaxListeners(20);
+
 console.log('Welcome to Lilliputian - A disord bot');
 
-client.on('ready', () => {
+client.on('ready', async () => {
 	console.log(
 		`Lilliput is currently running on version v${
 			require('./package.json').version
 		}`
 	);
+
+	await mongo().then((mongoose) => {
+		try {
+			console.log('connected to mongo!');
+		} finally {
+			mongoose.connection.close();
+		}
+	});
 
 	presence(client);
 
@@ -107,10 +119,10 @@ client.on('ready', () => {
 		}
 	});
 
-	// roleClaim(client);
+	roleClaim(client);
 
 	poll(client);
 
-	// welcome(client);
+	welcome(client);
 });
 client.login(process.env.BOTTOKEN);
