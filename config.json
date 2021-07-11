@@ -1,4 +1,4 @@
 {
 	"prefix": "put!",
-	"mongoPath":"mongodb://localhost:27017"
+	"mongoPath":"mongodb://localhost:27017/Lilliputian-Bot"
 }

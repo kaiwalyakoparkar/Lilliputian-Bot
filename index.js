@@ -37,6 +37,8 @@ client.on('ready', async () => {
 		}
 	});
 
+	welcome(client);
+
 	presence(client);
 
 	command(client, ['hey', 'hello'], (message) => {
@@ -122,7 +124,6 @@ client.on('ready', async () => {
 	// roleClaim(client);
 
 	poll(client);
-
-	// welcome(client);
+	
 });
 client.login(process.env.BOTTOKEN);
