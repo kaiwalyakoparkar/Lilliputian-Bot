@@ -119,10 +119,10 @@ client.on('ready', async () => {
 		}
 	});
 
-	roleClaim(client);
+	// roleClaim(client);
 
 	poll(client);
 
-	welcome(client);
+	// welcome(client);
 });
 client.login(process.env.BOTTOKEN);
