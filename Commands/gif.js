@@ -10,7 +10,7 @@ module.exports = async function (msg) {
 	let keywords = 'hello';
 
 	//If Something is provided after put!gif then that is keyword
-	//eg put!gif dance here dace becomes the keyword.
+	//eg put!gif dance here dance becomes the keyword.
 	if (tokens.length > 1) {
 		keywords = tokens.slice(1, tokens.length).join(' ');
 	}
