@@ -15,6 +15,7 @@ const serverStats = require('./Commands/serverStats.js');
 const roleClaim = require('./Commands/roleClaim.js');
 const poll = require('./Commands/poll.js');
 const welcome = require('./Commands/welcome.js');
+const keepAlive = require('./server');
 
 console.log('Welcome to Lilliputian - A disord bot');
 
@@ -114,3 +115,5 @@ client.on('ready', () => {
 	// welcome(client);
 });
 client.login(process.env.BOTTOKEN);
+
+keepAlive()
